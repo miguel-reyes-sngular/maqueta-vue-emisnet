@@ -1,14 +1,29 @@
 <template>
-  <div class="customForm">
-    <h2>EMISNET</h2>
-    <form action="" class="innerForm">
-      <label for="username">Usuario</label>
-      <input type="text" id="username" placeholder="Usuario" autocomplete="username">
-      <label for="password">Contraseña</label>
-      <input type="password" id="password" placeholder="*****" autocomplete="current-password">
-      <img src="" alt="captcha">
-      <input type="text" id="captcha" placeholder="ESCRIBE AQUÍ EL TEXTO DE LA IMAGEN">
-      <button>ENTRAR</button>
+  <section class="customForm">
+    <h2 class="h2_title">EMISNET</h2>
+    <cv-form action="">
+      <cv-text-input
+        id="username"
+        placeholder="Usuario"
+        autocomplete="username"
+        :label="usernameLabel"
+      />
+      <cv-text-input
+        id="password"
+        type="password"
+        placeholder="*****"
+        autocomplete="current-password"
+        :label="passwordLabel"
+      />
+      <img src="../assets/captcha.png" alt="captcha">
+      <cv-text-input
+        type="text"
+        id="captcha"
+        placeholder="ESCRIBE AQUÍ EL TEXTO DE LA IMAGEN"
+      />
+      <cv-button kind="tertiary" @click="actionClick">
+        ENTRAR
+      </cv-button>
       <span>
         <a href="forgot-password">Olvidé mi contraseña</a>
         /
@@ -18,24 +33,38 @@
         <i></i>
         <span>Solicitar usuario nuevo</span>
       </div>
-    </form>
+    </cv-form>
     <div class="contactUs">
       <span>Contáctanos</span>
       <i></i>
       <i></i>
     </div>
     <a href="aviso-privacidad">Aviso de privacidad</a>
-  </div>
+  </section>
 </template>
 
 <script>
+
 export default {
-  
+  methods: {
+    actionClick() {
+      console.log('click');
+    }
+  },
+
+  data() {
+    return {
+      usernameLabel: 'Usuario',
+      passwordLabel: 'Contraseña',
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+$navy-blue: #00004f;
 $white: #fff;
+$green: #95c084;
   .customForm {
     display: flex;
     flex-direction: column;
@@ -45,12 +74,18 @@ $white: #fff;
     height: 100%;
   }
 
-  .innerForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70%;
+  .h2_title {
+    color: $navy-blue;
+  }
+
+  /*cv button*/
+  .bx--btn--tertiary {
+    color: $green;
+    border-color: $green;
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
   }
 </style>
