@@ -21,17 +21,28 @@
         id="captcha"
         placeholder="ESCRIBE AQUÍ EL TEXTO DE LA IMAGEN"
       />
-      <cv-button kind="tertiary" @click="actionClick">
-        ENTRAR
-      </cv-button>
-      <span>
-        <a href="forgot-password">Olvidé mi contraseña</a>
-        /
-        <a href="change-password">Cambiar contraseña</a>
-      </span>
+      <div class="buttonAccess">
+        <cv-button
+          kind="tertiary"
+          @click="actionClick"
+        >
+          ENTRAR
+        </cv-button>
+      </div>
+      <div class="passwordActions">
+        <span>
+          <a href="#">Olvidé mi contraseña</a>
+          <span> / </span>
+          <a href="#">Cambiar contraseña</a>
+        </span>
+      </div>
       <div class="newUser">
-        <i></i>
-        <span>Solicitar usuario nuevo</span>
+        <img
+          src="../assets/icons/user.svg"
+          alt="User Icon"
+          class="userSVG"
+        />
+        <a href="#">Solicitar usuario nuevo</a>
       </div>
     </cv-form>
     <div class="contactUs">
@@ -39,7 +50,7 @@
       <i></i>
       <i></i>
     </div>
-    <a href="aviso-privacidad">Aviso de privacidad</a>
+    <a href="#">Aviso de privacidad</a>
   </section>
 </template>
 
@@ -64,7 +75,8 @@ export default {
 <style lang="scss" scoped>
 $navy-blue: #00004f;
 $white: #fff;
-$green: #95c084;
+$green: #7fbd6b;
+
   .customForm {
     display: flex;
     flex-direction: column;
@@ -78,14 +90,53 @@ $green: #95c084;
     color: $navy-blue;
   }
 
+  .buttonAccess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 2rem;
+  }
+
   /*cv button*/
   .bx--btn--tertiary {
     color: $green;
     border-color: $green;
+    border-width: 3px;
+    border-radius: 5px;
+    padding-inline: 0;
+    width: 100%;
+    justify-content: center;
+    font-weight: 600;
 
     &:hover {
       background-color: $green;
       color: $white;
     }
+  }
+
+  .newUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-block: 2rem;
+
+    & a {
+      color: $green;
+      text-decoration: none;
+    }
+  }
+
+  .passwordActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userSVG {
+    width: 30px;
+    height: 30px;
+    filter: invert(63%) sepia(65%) saturate(285%) hue-rotate(60deg) brightness(97%) contrast(86%);
   }
 </style>

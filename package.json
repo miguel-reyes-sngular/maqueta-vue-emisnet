@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@carbon/colors": "^10.34.0",
+    "@carbon/icons-react": "^10.44.0",
+    "@carbon/type": "^10.39.0",
     "@carbon/vue": "^2.40.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
