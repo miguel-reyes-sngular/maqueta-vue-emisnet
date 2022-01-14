@@ -8,8 +8,9 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $navy-blue: #00004f;
+$white: #fff;
 
 #nav {
   display: flex;
@@ -20,7 +21,7 @@ $navy-blue: #00004f;
   height: 50px;
 
   & a {
-    color: #fff;
+    color: $white;
     text-decoration: none;
     font-size: 1.2rem;
     padding: 0.5rem;
