@@ -1,24 +1,27 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <HorizontalMenu />
+    <Main />
   </div>
 </template>
 
 <script>
+import Main from '@/components/Main'
+import HorizontalMenu from '@/components/HorizontalMenu'
 
 export default {
   name: 'Home',
-
+  components: {
+    Main,
+    HorizontalMenu
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .home {
-
-  & h1 {
-    color: black;
-    font-size: 2rem;
-    text-align: center;
-  }
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 90vh;
 }
 </style>
