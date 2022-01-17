@@ -24,4 +24,10 @@ export default {
     grid-template-columns: 1fr 1fr;
     height: 100%;
   }
+
+  @media screen and (max-width: 1000px) {
+    .loginWrapper {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

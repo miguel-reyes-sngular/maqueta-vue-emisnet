@@ -15,7 +15,11 @@
         autocomplete="current-password"
         :label="passwordLabel"
       />
-      <img src="../assets/captcha.png" alt="captcha">
+      <img
+        src="../assets/captcha.png"
+        alt="captcha"
+        class="captcha"
+      >
       <cv-text-input
         type="text"
         id="captcha"
@@ -47,10 +51,25 @@
     </cv-form>
     <div class="contactUs">
       <span>Contáctanos</span>
-      <i></i>
-      <i></i>
+      <a href="tel:123-456-7890">
+        <img
+          src="../assets/icons/phone.svg"
+          alt="Teléfono"
+        >
+      </a>
+      <a href="mailto: abc@example.com">
+        <img
+          src="../assets/icons/email.svg"
+          alt="E-mail"
+        >
+      </a>
     </div>
-    <a href="#">Aviso de privacidad</a>
+    <a
+      href="#"
+      class="avisoPrivacidad"
+    >
+      Aviso de privacidad
+    </a>
   </section>
 </template>
 
@@ -74,8 +93,23 @@ export default {
 
 <style lang="scss" scoped>
 $navy-blue: #00004f;
+$second-blue: #43546e;
+$ligth-blue: #86abdc;
 $white: #fff;
 $green: #7fbd6b;
+
+  .cv-form.bx--form {
+    width: 60%;
+
+    #username {
+      background-color: $white;
+    }
+
+    & .captcha {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
 
   .customForm {
     display: flex;
@@ -132,11 +166,51 @@ $green: #7fbd6b;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    & span a {
+      color: $ligth-blue;
+    }
   }
 
   .userSVG {
     width: 30px;
     height: 30px;
     filter: invert(63%) sepia(65%) saturate(285%) hue-rotate(60deg) brightness(97%) contrast(86%);
+  }
+
+  .contactUs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 25%;
+    justify-content: space-evenly;
+    & span {
+      color: $second-blue;
+      font-weight: 600;
+    }
+
+    & a img {
+      width: 20px;
+      height: 20px;
+      filter: invert(74%) sepia(8%) saturate(101%) hue-rotate(161deg) brightness(80%) contrast(88%);
+    }
+  }
+
+  .avisoPrivacidad {
+    text-decoration: none;
+    color: $ligth-blue;
+  }
+
+  @media screen and (max-width: 1305px) {
+    .cv-form.bx--form {
+      width: 75%;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .customForm {
+      margin-top: 25px;
+    }
   }
 </style>

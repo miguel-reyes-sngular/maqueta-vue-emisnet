@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="../assets/edificio.png" alt="Edificio">
+    <img src="../assets/edificio.png" alt="Edificio" class="edificio">
   </div>
 </template>
 
@@ -10,6 +10,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  
+<style lang="scss" scoped>
+  .edificio {
+    max-width: 700px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .edificio {
+      display: none;
+    }
+  }
 </style>
