@@ -5,13 +5,21 @@
         <header class="header">
           <h2 class="header__h2">EMISNET</h2>
         </header>
-        <section class="options">
-          <OpcionMenu
-            v-for="(OpcionMenu, index) in options"
-            :OpcionMenu="OpcionMenu"
-            :key="index"
-          />
-        </section>
+        <CvAccordion
+          align="end"
+        >
+          <CvAccordionItem
+            v-for="option in options"
+            :key="option.id"
+          >
+            <template v-slot:title>{{ option.title }}</template>
+            <template v-slot:content>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus voluptate nobis labore voluptatum est, rerum obcaecati ipsam consequuntur ducimus mollitia amet rem, quod blanditiis odio nisi ad? Quia, neque.
+              </p>
+            </template>
+          </CvAccordionItem>
+        </CvAccordion>
       </div>
       <div class="lower">
         <footer class="footer">
@@ -24,47 +32,42 @@
 </template>
 
 <script>
-import OpcionMenu from '@/components/OpcionMenu'
 
 export default {
   data() {
     return {
       options: [
         {
-          option: 'Inicio',
+          title: 'Inicio',
           index: 0,
         },
         {
-          option: 'Captura y envío',
+          title: 'Captura y envío',
           index: 1,
         },
         {
-          option: 'Documentos enviados',
+          title: 'Documentos enviados',
           index: 2,
         },
         {
-          option: 'Inscripción de Valores',
+          title: 'Inscripción de Valores',
           index: 3,
         },
         {
-          option: 'Contacto',
+          title: 'Contacto',
           index: 4,
         },
         {
-          option: 'Cambiar contraseña',
+          title: 'Cambiar contraseña',
           index: 5,
         },
         {
-          option: 'Salir',
+          title: 'Salir',
           index: 6,
         }
       ]
     }
   },
-
-  components: {
-    OpcionMenu
-  }
 }
 </script>
 
