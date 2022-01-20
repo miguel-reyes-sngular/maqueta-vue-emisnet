@@ -10,13 +10,13 @@
         >
           <CvAccordionItem
             v-for="option in options"
-            :key="option.id"
+            :key="option.index"
           >
             <template v-slot:title>{{ option.title }}</template>
             <template v-slot:content>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam minus voluptate nobis labore voluptatum est, rerum obcaecati ipsam consequuntur ducimus mollitia amet rem, quod blanditiis odio nisi ad? Quia, neque.
-              </p>
+              <cv-side-nav-menu-item>
+                <p>{{ option.content }}</p>
+              </cv-side-nav-menu-item>
             </template>
           </CvAccordionItem>
         </CvAccordion>
@@ -40,6 +40,7 @@ export default {
         {
           title: 'Inicio',
           index: 0,
+          content: ['hola', 'mundo']
         },
         {
           title: 'Captura y envío',
@@ -74,6 +75,7 @@ export default {
 <style lang="scss" scoped>
 $navy-blue: #00004f;
 $ligth-blue: #86abdc;
+
   .horizontalMenu {
     position: relative;
 
