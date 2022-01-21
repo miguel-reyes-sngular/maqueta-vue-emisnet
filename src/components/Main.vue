@@ -67,4 +67,16 @@ $blue-information: #404869;
   margin-left: 25px;
 }
 
+@media screen and (max-width: 1055px) {
+  .informationSquares {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .informationSquares {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>

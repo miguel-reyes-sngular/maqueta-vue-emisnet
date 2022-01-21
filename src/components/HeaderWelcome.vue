@@ -77,4 +77,22 @@ $violet-blue: #565895;
       color: $violet-blue;
     }
   }
+
+  @media screen and (max-width: 885px) {
+    .header {
+      & .welcome {
+      padding-left: 15px;
+
+      & h4 {
+        font-size: 1rem;
+      }
+    }
+
+      & .A span {
+        width: 20px;
+        height: 20px;
+        font-size: 0.75rem;
+      }
+    }
+  }
 </style>

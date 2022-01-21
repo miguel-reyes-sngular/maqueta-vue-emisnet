@@ -24,4 +24,10 @@ export default {
   grid-template-columns: 20% 80%;
   height: 90vh;
 }
+
+@media screen and (max-width: 1055px) {
+  .home {
+    grid-template-columns: 25% 75%;
+  }
+}
 </style>

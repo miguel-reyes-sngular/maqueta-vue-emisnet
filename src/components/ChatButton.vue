@@ -20,6 +20,7 @@ $navy-blue: #00004f;
     border-radius: 5px;
     position: absolute;
     right: 20px;
+    bottom: 20em;
 
     & :hover {
       cursor: pointer;
