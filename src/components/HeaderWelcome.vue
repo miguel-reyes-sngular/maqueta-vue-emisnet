@@ -95,4 +95,10 @@ $violet-blue: #565895;
       }
     }
   }
+
+  @media screen and (max-width: 700px) {
+    .header {
+      grid-template-columns: 5% 70% 20%;
+    }
+  }
 </style>

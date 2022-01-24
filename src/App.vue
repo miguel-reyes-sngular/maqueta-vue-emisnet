@@ -3,6 +3,7 @@
     <nav id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/login">Login</router-link>
+      <router-link to="/options">Options</router-link>
     </nav>
     <router-view />
   </div>
@@ -25,6 +26,12 @@ $white: #fff;
     text-decoration: none;
     font-size: 1.2rem;
     padding: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #nav a:last-child {
+    display: none;
   }
 }
 </style>

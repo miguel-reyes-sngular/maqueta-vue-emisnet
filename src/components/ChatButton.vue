@@ -22,7 +22,7 @@ $navy-blue: #00004f;
     right: 20px;
     bottom: 20em;
 
-    & :hover {
+    &:hover {
       cursor: pointer;
     }
 

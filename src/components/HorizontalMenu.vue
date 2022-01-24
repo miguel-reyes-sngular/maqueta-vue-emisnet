@@ -5,21 +5,7 @@
         <header class="header">
           <h2 class="header__h2">EMISNET</h2>
         </header>
-        <CvAccordion
-          align="end"
-        >
-          <CvAccordionItem
-            v-for="option in options"
-            :key="option.index"
-          >
-            <template v-slot:title>{{ option.title }}</template>
-            <template v-slot:content>
-              <cv-side-nav-menu-item>
-                <p>{{ option.content }}</p>
-              </cv-side-nav-menu-item>
-            </template>
-          </CvAccordionItem>
-        </CvAccordion>
+        <Options />
       </div>
       <div class="lower">
         <footer class="footer">
@@ -32,49 +18,19 @@
 </template>
 
 <script>
+import Options from "../views/Options"
 
 export default {
-  data() {
-    return {
-      options: [
-        {
-          title: 'Inicio',
-          index: 0,
-          content: ['hola', 'mundo']
-        },
-        {
-          title: 'Captura y envío',
-          index: 1,
-        },
-        {
-          title: 'Documentos enviados',
-          index: 2,
-        },
-        {
-          title: 'Inscripción de Valores',
-          index: 3,
-        },
-        {
-          title: 'Contacto',
-          index: 4,
-        },
-        {
-          title: 'Cambiar contraseña',
-          index: 5,
-        },
-        {
-          title: 'Salir',
-          index: 6,
-        }
-      ]
-    }
-  },
+  components: {
+    Options
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 $navy-blue: #00004f;
 $ligth-blue: #86abdc;
+$green: #7fbd6b;
 
   .horizontalMenu {
     position: relative;
@@ -127,4 +83,21 @@ $ligth-blue: #86abdc;
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .optionsLinks {
+    color: gray;
+    text-decoration: none;
+    font-weight: normal;
+
+    &:active {
+      color: $green;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .horizontalMenu {
+      display: none;
+    }
+  }
+
 </style>
