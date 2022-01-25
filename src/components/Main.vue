@@ -1,27 +1,32 @@
 <template>
-  <div>
-    <header-welcome />
-    <div class="searchBar">
-      <h5 class="frequentInformation">Información enviada frecuentemente</h5>
-      <cv-search
-        id="search-1"
-        placeholder="Buscar documento"
-        light="light"
-        size="small"
-      />
-    </div>
-    <section class="informationSquares">
-      <information-square information="mensual"/>
-      <information-square information="trimestral"/>
-      <information-square information="anual"/>
+  <div class="mainWrapper">
+    <section class="left">
+      <horizontal-menu/>
     </section>
-    <cv-date-picker
-      kind="single"
-      pattern="\d{1,2}/\d{1,2}/\d{4}"
-      placeholder="mm/dd/yyyy"
-    >
-    </cv-date-picker>
-    <chat-button />
+    <section class="right">
+      <header-welcome />
+      <div class="searchBar">
+        <h5 class="frequentInformation">Información enviada frecuentemente</h5>
+        <cv-search
+          id="search-1"
+          placeholder="Buscar documento"
+          light="light"
+          size="small"
+        />
+      </div>
+      <section class="informationSquares">
+        <information-square information="mensual"/>
+        <information-square information="trimestral"/>
+        <information-square information="anual"/>
+      </section>
+      <cv-date-picker
+        kind="single"
+        pattern="\d{1,2}/\d{1,2}/\d{4}"
+        placeholder="mm/dd/yyyy"
+      >
+      </cv-date-picker>
+      <chat-button />
+    </section>
   </div>
 </template>
 
@@ -29,18 +34,27 @@
 import HeaderWelcome from '@/components/HeaderWelcome'
 import InformationSquare from '@/components/InformationSquare'
 import ChatButton from '@/components/ChatButton'
+import HorizontalMenu from '@/components/HorizontalMenu'
 
 export default {
   components: {
     HeaderWelcome,
     InformationSquare,
-    ChatButton
+    ChatButton,
+    HorizontalMenu
   },
 }
 </script>
 
 <style lang="scss" scoped>
 $blue-information: #404869;
+
+.mainWrapper {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 90vh;
+}
+
 .searchBar {
   display: flex;
   flex-direction: row;
@@ -70,6 +84,12 @@ $blue-information: #404869;
 @media screen and (max-width: 1055px) {
   .informationSquares {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mainWrapper {
+    grid-template-columns: 100%;
   }
 }
 

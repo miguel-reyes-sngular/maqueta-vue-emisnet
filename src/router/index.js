@@ -10,6 +10,11 @@ const routes = [
     component: () => import('../views/Home.vue')
   },
   {
+    path: '/inicio',
+    name: 'Main',
+    component: () => import('../components/Main.vue')
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue')
@@ -18,6 +23,11 @@ const routes = [
     path: '/options',
     name: 'Options',
     component: () => import('../views/Options.vue')
+  },
+  {
+    path: '/capitales',
+    name: 'Capitales',
+    component: () => import('../views/Capitales.vue')
   }
 ]
 

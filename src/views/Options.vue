@@ -10,10 +10,10 @@
         <template v-slot:title>{{ option.title }}</template>
         <template v-slot:content>
           <cv-side-nav-menu-item>
-            <a href="#" v-for="contenido in option.content" :key="contenido" class="optionsLinks">
+            <router-link v-for="(contenido, index) in option.content" :key="index" class="optionsLinks" :to="option.links[index]">
               {{ contenido }}
               <br />
-            </a>
+            </router-link>
           </cv-side-nav-menu-item>
         </template>
       </CvAccordionItem>
@@ -34,10 +34,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  ul {
-    color: black;
-    border: 1px solid black;
-    height: auto;
-    width: 100%;
+$green: #7fbd6b;
+.optionsLinks {
+  text-decoration: none;
+  color: gray;
+  &:active {
+    color: $green;
   }
+}
 </style>

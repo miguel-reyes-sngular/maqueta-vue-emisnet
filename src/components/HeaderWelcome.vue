@@ -80,6 +80,7 @@ $violet-blue: #565895;
 
   @media screen and (max-width: 885px) {
     .header {
+      height: fit-content;
       & .welcome {
       padding-left: 15px;
 
@@ -99,6 +100,27 @@ $violet-blue: #565895;
   @media screen and (max-width: 700px) {
     .header {
       grid-template-columns: 5% 70% 20%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .header {
+      grid-template-columns: 15% 85%;
+      grid-template-areas: 'A B'
+                          'C C';
+
+      & .A {
+        grid-area: A;
+      }
+
+      & .welcome {
+        grid-area: B;
+      }
+
+      & .options {
+        grid-area: C;
+        justify-content: center;
+      }
     }
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HorizontalMenu />
-    <Main />
+    <router-view />
   </div>
 </template>
 
