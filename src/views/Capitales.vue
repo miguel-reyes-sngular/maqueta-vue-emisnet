@@ -5,10 +5,13 @@
     </section>
     <section class="right">
       <HeaderWelcome />
-      <cv-progress>
-        <cv-progress-step label="1" additional-info="Series" />
-        <cv-progress-step label="2" additional-info="Detalle de Ofertas" />
-      </cv-progress>
+      <div class="interaction_capitales">
+        <cv-progress>
+          <cv-progress-step label="1" additional-info="Series" />
+          <cv-progress-step label="2" additional-info="Detalle de Ofertas" />
+        </cv-progress>
+        <DatosIniciales />
+      </div>
     </section>
   </div>
 </template>
@@ -16,11 +19,13 @@
 <script>
 import HeaderWelcome from '@/components/HeaderWelcome'
 import HorizontalMenu from '@/components/HorizontalMenu'
+import DatosIniciales from '@/components/DatosIniciales'
 
 export default {
   components: {
     HorizontalMenu,
-    HeaderWelcome
+    HeaderWelcome,
+    DatosIniciales
 },
 
 }
@@ -34,8 +39,8 @@ export default {
 
   & .right {
     & .bx--progress {
-      margin-top: 20px;
-      justify-content: space-between;
+      margin: 25px 0;
+      /* justify-content: space-between; */
     }
   }
 }

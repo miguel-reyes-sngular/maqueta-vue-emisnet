@@ -1,9 +1,9 @@
 <template>
   <div>
-    <CvAccordion
+    <cv-accordion
       align="end"
     >
-      <CvAccordionItem
+      <cv-accordion-item
         v-for="option in options"
         :key="option.index"
       >
@@ -16,8 +16,8 @@
             </router-link>
           </cv-side-nav-menu-item>
         </template>
-      </CvAccordionItem>
-    </CvAccordion>
+      </cv-accordion-item>
+    </cv-accordion>
   </div>
 </template>
 
