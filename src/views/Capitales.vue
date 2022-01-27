@@ -11,6 +11,8 @@
           <cv-progress-step label="2" additional-info="Detalle de Ofertas" />
         </cv-progress>
         <DatosIniciales />
+        <TipoDeOferta />
+        <Series />
       </div>
     </section>
   </div>
@@ -20,12 +22,16 @@
 import HeaderWelcome from '@/components/HeaderWelcome'
 import HorizontalMenu from '@/components/HorizontalMenu'
 import DatosIniciales from '@/components/DatosIniciales'
+import TipoDeOferta from '@/components/TipoDeOferta'
+import Series from '@/components/Series'
 
 export default {
   components: {
     HorizontalMenu,
     HeaderWelcome,
-    DatosIniciales
+    DatosIniciales,
+    TipoDeOferta,
+    Series
 },
 
 }
