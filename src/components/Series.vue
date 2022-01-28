@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="seriesDiv">
     <h5>SERIES</h5>
     <cv-button
       @click="insertSerie"
@@ -11,7 +11,7 @@
       class="seriesInfo"
       ref="seriesInfo"
     >
-      <div v-for="(serie, index) in series" :key="index">
+      <div class="seriesWrapper" v-for="(serie, index) in series" :key="index" :ref="index">
         <div class="serieTitulo">
           <label for="serieTitulo">Serie</label>
           <input type="text" id="serieTitulo" :value="serie.titulo">
@@ -28,11 +28,11 @@
           <label for="importe">Importe</label>
           <input type="number" id="importe" :value="serie.importe" min="1">
         </div>
-        <div class="numeroAcciones">
+        <div class="numeroAcciones2">
           <label for="numeroAcciones">No. de acciones</label>
           <input type="number" id="numeroAcciones" :value="serie.numeroAcciones" min="1">
         </div>
-        <div class="importe">
+        <div class="importe2">
           <label for="importe">Importe</label>
           <input type="number" id="importe" :value="serie.importe" min="1">
         </div>
@@ -40,7 +40,10 @@
           <label for="total">Total</label>
           <input type="number" id="total" :value="serie.total" min="1">
         </div>
-        <cv-accordion>
+        <button class="eraseButton" @click="deleteSerie">
+          <img src="../assets/icons/trash-can.svg" alt="Borrar serie" width="20px">
+        </button>
+        <cv-accordion class="serieSelect">
           <cv-accordion-item>
             <template v-slot:content>
               <form class="serieFormulario">
@@ -115,7 +118,7 @@ export default {
     insertSerie() {
       this.series.push(
         {
-          titulo: 'A',
+          titulo: Date.now(),
           numeroTitulos: 1,
           numeroAcciones: 1000,
           importe: 500,
@@ -131,11 +134,143 @@ export default {
       )
     },
 
-    deleteSerie() {
+    deleteSerie(pointerEvent) {
+      console.log(this.$refs);
+      //TODO
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+$verde-button: #52a436;
+
+.seriesDiv {
+  display: grid;
+  grid-template-areas: "a b"
+                        "c c";
+}
+
+h5 {
+  color: $verde-button;
+  grid-area: a;
+}
+
+.bx--btn--tertiary {
+  color: $verde-button;
+  border-color: $verde-button;
+  grid-area: b;
+
+  &:hover {
+    background-color: $verde-button;
+    color: white;
+  }
+}
+
+.seriesInfo {
+  grid-area: c;
+}
+
+.seriesWrapper {
+  display: grid;
+  grid-template-areas: "serieTitulo numeroTitulos numeroAcciones importe numeroAcciones2 importe2 total eraseButton"
+                      "serieSelect serieSelect serieSelect serieSelect serieSelect serieSelect serieSelect serieSelect";
+
+  & .serieTitulo {
+    grid-area: serieTitulo;
+  }
+
+  & .numeroTitulos {
+    grid-area: numeroTitulos;
+  }
+
+  & .numeroAcciones {
+    grid-area: numeroAcciones;
+  }
+
+  & .importe {
+    grid-area: importe;
+  }
+
+  & .numeroAcciones2 {
+    grid-area: numeroAcciones2;
+  }
+
+  & .importe2 {
+    grid-area: importe2;
+  }
+
+  & .total {
+    grid-area: total;
+  }
+
+  & .eraseButton {
+    grid-area: eraseButton;
+  }
+
+  & .serieSelect {
+    grid-area: serieSelect;
+  }
+
+  & .serieFormulario {
+    display: grid;
+    background-color: #eeeeee;
+    align-items: center;
+    gap: 10px;
+    grid-template-areas: "serie bmv internacional"
+                          "cupon porcentajeSuscripcion porcentajeNacional"
+                          "listadoMercado derechoPreferente derechosCorporativosLimitados";
+
+    & .serie,
+    & .cupon,
+    & .porcentajeSuscripcion,
+    & .porcentajeNacional {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+
+      & input[type="text"],
+      & input[type="number"] {
+        border: none;
+        border-bottom: 1px solid gray;
+      }
+    }
+
+    & .serie {
+      grid-area: serie;
+    }
+
+    & .bmv {
+      grid-area: bmv;
+    }
+
+    & .internacional {
+      grid-area: internacional;
+    }
+
+    & .cupon {
+      grid-area: cupon;
+    }
+
+    & .porcentajeSuscripcion {
+      grid-area: porcentajeSuscripcion;
+    }
+
+    & .porcentajeNacional {
+      grid-area: porcentajeNacional;
+    }
+
+    & .listadoMercado {
+      grid-area: listadoMercado;
+    }
+
+    & .derechoPreferente {
+      grid-area: derechoPreferente;
+    }
+
+    & .derechosCorporativosLimitados {
+      grid-area: derechosCorporativosLimitados;
+    }
+  }
+}
 </style>

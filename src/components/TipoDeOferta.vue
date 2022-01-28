@@ -1,7 +1,7 @@
 <template>
   <div>
     <h5 class="title">TIPO DE OFERTA</h5>
-    <cv-select label="Select label">
+    <cv-select label="">
       <cv-select-option selected>Elige una opción</cv-select-option>
       <cv-select-option v-for="(oferta, index) in tiposDeOferta" :key="index">
         {{ oferta }}

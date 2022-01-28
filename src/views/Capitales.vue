@@ -50,4 +50,14 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .capitalesWrapper {
+    grid-template-columns: 1fr;
+
+    & .left {
+      display: none;
+    }
+  }
+}
 </style>
