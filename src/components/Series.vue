@@ -135,8 +135,8 @@ export default {
     },
 
     deleteSerie(pointerEvent) {
-      console.log(this.$refs);
-      //TODO
+      console.log(pointerEvent.target.parentElement.parentElement);
+      pointerEvent.target.parentElement.parentElement.remove();
     },
   },
 }
