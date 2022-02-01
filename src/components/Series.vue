@@ -135,8 +135,8 @@ export default {
     },
 
     deleteSerie(pointerEvent) {
-      console.log(pointerEvent.target.parentElement.parentElement);
       pointerEvent.target.parentElement.parentElement.remove();
+      this.series.splice(pointerEvent.target.parentElement.parentElement, 1);
     },
   },
 }
@@ -270,6 +270,41 @@ h5 {
 
     & .derechosCorporativosLimitados {
       grid-area: derechosCorporativosLimitados;
+    }
+  }
+}
+
+@media screen and (max-width: 1531px) {
+  .seriesDiv {
+    display: flex;
+    flex-direction: column;
+
+    & .seriesWrapper {
+      display: grid;
+      grid-template-areas: "serieTitulo numeroTitulos"
+                            "numeroAcciones importe"
+                            "numeroAcciones2 importe2"
+                            "total eraseButton"
+                            "serieSelect serieSelect";
+      gap: 10px;
+
+      & .eraseButton {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .seriesDiv {
+    align-items: center;
+
+    & .seriesInfo {
+      & .seriesWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 }
