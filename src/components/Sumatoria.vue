@@ -22,6 +22,7 @@ export default {
 <style lang="scss" scoped>
 .sumatoria {
   width: 100%;
+  margin-top: 20px;
 
   & .numeros {
     display: flex;
@@ -42,9 +43,17 @@ export default {
 }
 
 @media screen and (max-width: 500px) {
-  .numeros {
-    flex-direction: column;
-    margin-left: 20px;
+  .sumatoria {
+    & .numeros {
+      flex-direction: column;
+      margin-left: 20px;
+
+      & .long,
+      .short {
+        margin-bottom: 10px;
+        width: 90%;
+      }
+    }
   }
 }
 </style>

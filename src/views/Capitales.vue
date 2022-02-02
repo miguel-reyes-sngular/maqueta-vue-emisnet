@@ -14,6 +14,7 @@
         <TipoDeOferta />
         <Series />
         <Sumatoria />
+        <Totales />
       </div>
     </section>
   </div>
@@ -26,6 +27,7 @@ import DatosIniciales from '@/components/DatosIniciales'
 import TipoDeOferta from '@/components/TipoDeOferta'
 import Series from '@/components/Series'
 import Sumatoria from '@/components/Sumatoria'
+import Totales from '@/components/Totales'
 
 export default {
   components: {
@@ -34,7 +36,8 @@ export default {
     DatosIniciales,
     TipoDeOferta,
     Series,
-    Sumatoria
+    Sumatoria,
+    Totales
 },
 
 }
