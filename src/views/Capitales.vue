@@ -13,6 +13,7 @@
         <DatosIniciales />
         <TipoDeOferta />
         <Series />
+        <Sumatoria />
       </div>
     </section>
   </div>
@@ -24,6 +25,7 @@ import HorizontalMenu from '@/components/HorizontalMenu'
 import DatosIniciales from '@/components/DatosIniciales'
 import TipoDeOferta from '@/components/TipoDeOferta'
 import Series from '@/components/Series'
+import Sumatoria from '@/components/Sumatoria'
 
 export default {
   components: {
@@ -31,7 +33,8 @@ export default {
     HeaderWelcome,
     DatosIniciales,
     TipoDeOferta,
-    Series
+    Series,
+    Sumatoria
 },
 
 }
