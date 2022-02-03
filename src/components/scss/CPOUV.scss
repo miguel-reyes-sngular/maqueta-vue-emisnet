@@ -1,0 +1,67 @@
+$verde-button: #52a436;
+
+.bx--btn--tertiary {
+  color: $verde-button;
+  border-color: $verde-button;
+  grid-area: b;
+
+  &:hover, &:focus, &:active {
+    background-color: $verde-button;
+    color: white;
+  }
+}
+
+.cpoDiv,
+.uvDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & .seriesCPOUVWrapper {
+    width: 90%;
+    display: grid;
+    grid-template-areas: "serie indeval listar ofertar borrar"
+                          "inscrita internacional select cupon .";
+
+    & .serie {
+      grid-area: serie;
+    }
+
+    & .titulosIndeval {
+      grid-area: indeval;
+    }
+
+    & .cposListar,
+    & .uvsListar {
+      grid-area: listar;
+    }
+
+    & .cposOfertar,
+    & .uvsOfertar {
+      grid-area: ofertar;
+    }
+
+    & .inscritaBMV {
+      grid-area: inscrita;
+    }
+
+    & .internacional {
+      grid-area: internacional;
+    }
+
+    & .listadoMercado {
+      grid-area: select;
+    }
+
+    & .cupon {
+      grid-area: cupon;
+    }
+
+    & .eraseButton {
+      grid-area: borrar;
+    }
+  }
+}
+

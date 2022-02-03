@@ -11,18 +11,18 @@
       class="seriesInfo"
       ref="seriesInfo"
     >
-      <div class="seriesWrapper" v-for="(serie, index) in series" :key="index" :ref="index">
+      <div class="seriesWrapper" v-for="(serie, index) in series" :key="index">
         <div class="serieTitulo">
           <label for="serieTitulo">Serie</label>
           <input type="text" id="serieTitulo" :value="serie.titulo">
         </div>
         <div class="numeroTitulos">
           <label for="numeroTitulos">No. de títulos a depositar en Indeval</label>
-          <input type="number" id="numeroTitulos" :value="serie.numeroTitulos" min="1">
+          <input type="number" id="numeroTitulos" :value="serie.numeroTitulos" min="0">
         </div>
         <div class="numeroAcciones">
           <label for="numeroAcciones">No. de acciones</label>
-          <input type="number" id="numeroAcciones" :value="serie.numeroAcciones" min="1">
+          <input type="number" id="numeroAcciones" :value="serie.numeroAcciones" min="0">
         </div>
         <div class="importe">
           <label for="importe">Importe</label>
@@ -30,15 +30,15 @@
         </div>
         <div class="numeroAcciones2">
           <label for="numeroAcciones">No. de acciones</label>
-          <input type="number" id="numeroAcciones" :value="serie.numeroAcciones" min="1">
+          <input type="number" id="numeroAcciones" :value="serie.numeroAcciones" min="0">
         </div>
         <div class="importe2">
           <label for="importe">Importe</label>
-          <input type="number" id="importe" :value="serie.importe" min="1">
+          <input type="number" id="importe" :value="serie.importe" min="0">
         </div>
         <div class="total">
           <label for="total">Total</label>
-          <input type="number" id="total" :value="serie.total" min="1">
+          <input type="number" id="total" :value="serie.total" min="0">
         </div>
         <button class="eraseButton" @click="deleteSerie">
           <img src="../assets/icons/trash-can.svg" alt="Borrar serie" width="20px">
@@ -161,7 +161,7 @@ h5 {
   border-color: $verde-button;
   grid-area: b;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     background-color: $verde-button;
     color: white;
   }

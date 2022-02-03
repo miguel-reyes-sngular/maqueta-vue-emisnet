@@ -15,6 +15,7 @@
         <Series />
         <Sumatoria />
         <Totales />
+        <CPOUV />
       </div>
     </section>
   </div>
@@ -28,6 +29,7 @@ import TipoDeOferta from '@/components/TipoDeOferta'
 import Series from '@/components/Series'
 import Sumatoria from '@/components/Sumatoria'
 import Totales from '@/components/Totales'
+import CPOUV from '@/components/CPOUV'
 
 export default {
   components: {
@@ -37,7 +39,8 @@ export default {
     TipoDeOferta,
     Series,
     Sumatoria,
-    Totales
+    Totales,
+    CPOUV
 },
 
 }
