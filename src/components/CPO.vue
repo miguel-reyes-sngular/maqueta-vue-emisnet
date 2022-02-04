@@ -88,5 +88,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './scss/CPOUV.scss';
+  @import 'scss/CPOUV.scss';
+  @import 'scss/BotonAgregar.scss';
 </style>

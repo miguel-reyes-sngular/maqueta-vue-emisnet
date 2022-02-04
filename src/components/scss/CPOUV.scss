@@ -1,21 +1,8 @@
-$verde-button: #52a436;
-
-.bx--btn--tertiary {
-  color: $verde-button;
-  border-color: $verde-button;
-  grid-area: b;
-
-  &:hover, &:focus, &:active {
-    background-color: $verde-button;
-    color: white;
-  }
-}
-
 .cpoDiv,
 .uvDiv {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 
@@ -81,4 +68,3 @@ $verde-button: #52a436;
     }
   }
 }
-
