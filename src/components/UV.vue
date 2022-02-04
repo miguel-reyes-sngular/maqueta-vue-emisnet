@@ -1,11 +1,10 @@
 <template>
   <section class="uvDiv">
-    <cv-button
+    <BotonAgregar
       @click="insertSerie"
-      kind="tertiary"
     >
       AGREGAR
-    </cv-button>
+    </BotonAgregar>
     <div class="seriesCPOUVWrapper" v-for="(serie, index) in series" :key="index">
       <div class="serie">
         <label for="">Serie</label>
@@ -54,7 +53,13 @@
 </template>
 
 <script>
+import BotonAgregar from '@/components/BotonAgregar'
+
 export default {
+  components: {
+    BotonAgregar
+  },
+
   data() {
     return {
       listadoMercado: ['BMV', 'Mercado Internacional', 'Mercado Nacional'],
