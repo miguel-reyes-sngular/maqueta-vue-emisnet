@@ -1,9 +1,9 @@
 <template>
   <section class="proporcion">
     <h5>Proporción</h5>
-    <BotonAgregar>
+    <cv-button kind="tertiary">
       AGREGAR
-    </BotonAgregar>
+    </cv-button>
     <cv-select label="Serie CPO">
       <cv-select-option selected value="">
         Selecciona
@@ -12,17 +12,15 @@
         {{ option }}
       </cv-select-option>
     </cv-select>
+    <div class="acciones"></div>
+    <button>
+      <img src="../assets/icons/trash-can.svg" alt="Borrar" width="20px">
+    </button>
   </section>
 </template>
 
 <script>
-import BotonAgregar from '@/components/BotonAgregar'
-
 export default {
-  components: {
-    BotonAgregar
-  },
-
   data() {
     return {
       options: ['A', 'B', 'C'],

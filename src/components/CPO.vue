@@ -1,10 +1,11 @@
 <template>
   <section class="cpoDiv">
-    <BotonAgregar
+    <cv-button
       @click="insertSerie"
+      kind="tertiary"
     >
       AGREGAR
-    </BotonAgregar>
+    </cv-button>
     <div class="seriesCPOUVWrapper" v-for="(serie, index) in series" :key="index">
       <div class="serie">
         <label for="">Serie</label>
@@ -46,20 +47,14 @@
         <input type="number" name="" id="" min="0" :value="serie.cupon">
       </div>
       <button class="eraseButton" @click="deleteSerie">
-        <img src="../assets/icons/trash-can.svg" alt="Borrar serie" width="20px">
+        <img src="../assets/icons/trash-can.svg" alt="Borrar" width="20px">
       </button>
     </div>
   </section>
 </template>
 
 <script>
-import BotonAgregar from '@/components/BotonAgregar'
-
 export default {
-  components: {
-    BotonAgregar
-  },
-
   data() {
     return {
       listadoMercado: ['BMV', 'Mercado Internacional', 'Mercado Nacional'],
@@ -85,8 +80,8 @@ export default {
     },
 
     deleteSerie(pointerEvent) {
-      pointerEvent.target.parentElement.parentElement.remove();
-      this.series.splice(pointerEvent.target.parentElement.parentElement, 1);
+      pointerEvent.target.parentElement.remove();
+      this.series.splice(pointerEvent.target.parentElement, 1);
     },
   },
 }

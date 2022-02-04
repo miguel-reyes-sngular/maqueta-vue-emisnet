@@ -62,6 +62,23 @@ $verde-button: #52a436;
     & .eraseButton {
       grid-area: borrar;
     }
+
+    & .serie,
+    & .titulosIndeval,
+    & .cposListar,
+    & .uvsListar,
+    & .cposOfertar,
+    & .uvsOfertar,
+    & .cupon {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & div input[type="text"],
+    & div input[type="number"] {
+      border: none;
+      border-bottom: 1px solid grey;
+    }
   }
 }
 

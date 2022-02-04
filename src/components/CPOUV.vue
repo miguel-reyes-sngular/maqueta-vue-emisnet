@@ -1,5 +1,5 @@
 <template>
-  <div class="cpouv">
+  <section class="cpouv">
     <div class="radioButtons">
       <h5>CPO/UV</h5>
       <div class="tipoCPO">
@@ -13,17 +13,20 @@
     </div>
     <CPO v-if="tipoAlta" />
     <UV v-else />
-  </div>
+    <Proporcion />
+  </section>
 </template>
 
 <script>
 import CPO from './CPO.vue'
 import UV from './UV.vue'
+import Proporcion from '@/components/Proporcion'
 
 export default {
   components: {
     CPO,
-    UV
+    UV,
+    Proporcion
 },
 
   data() {

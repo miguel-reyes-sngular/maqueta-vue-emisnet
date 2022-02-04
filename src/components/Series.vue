@@ -41,7 +41,7 @@
           <input type="number" id="total" :value="serie.total" min="0">
         </div>
         <button class="eraseButton" @click="deleteSerie">
-          <img src="../assets/icons/trash-can.svg" alt="Borrar serie" width="20px">
+          <img src="../assets/icons/trash-can.svg" alt="Borrar" width="20px">
         </button>
         <cv-accordion class="serieSelect">
           <cv-accordion-item>
